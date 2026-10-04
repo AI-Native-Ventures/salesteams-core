@@ -38,10 +38,12 @@ The second migration requires the project's existing `rls_auto_enable()` adminis
 
 ## License
 
-Licensed under [PolyForm Noncommercial 1.0.0](LICENSE), using the official license text. Non-commercial use, modification and redistribution are permitted subject to its terms. Commercial use requires separate permission from the relevant rights holders. The license also defines permitted uses for certain non-commercial organizations; read the complete text.
+Licensed under [Elastic License 2.0 (ELv2)](LICENSE), using the official license text. Use, modification and redistribution, including internal commercial use, are permitted subject to its terms. You may not offer the software to third parties as a hosted or managed service exposing a substantial set of its features or functionality. You may not circumvent license-key protections or alter, remove or obscure licensing, copyright or other notices.
 
 This is source-available software. It is not licensed as open source. Third-party software and dependencies retain their own licenses.
 
-Required Notice: Copyright 2026 SalesTeams contributors.
+Copyright 2026 SalesTeams contributors.
+
+This license applies to this version and future versions released under it. Earlier versions retain the license distributed with them.
 
 The project's owners retain the ability to license code they own commercially. Before accepting external code contributions, we must establish contribution terms granting the commercial rights needed for the hosted product. Please open issues for now; external code contributions are not being accepted until those terms are in place.
