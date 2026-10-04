@@ -18,6 +18,12 @@ jobs:
   migration-replay:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      PGHOST: 127.0.0.1
+      PGPORT: 5432
+      PGDATABASE: salesteams_core_ci
+      PGUSER: postgres
+      PGPASSWORD: disposable-ci-only
     services:
       postgres:
         image: postgres:17
@@ -36,10 +42,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Replay migrations and prove access isolation
-        env:
-          PGHOST: 127.0.0.1
-          PGPORT: 5432
-          PGDATABASE: salesteams_core_ci
-          PGUSER: postgres
-          PGPASSWORD: disposable-ci-only
         run: bash scripts/db/test-migrations.sh
+      - name: Prove refusal guards and detect an injected access bug
+        run: bash scripts/db/test-ci-guards.sh

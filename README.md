@@ -14,6 +14,8 @@ The legacy application's outreach, inbox, billing and other modules are excluded
 
 GitHub Actions creates a disposable PostgreSQL 17 database, replays both migrations, and tests owner CRUD, cross-owner isolation, missing identity, anonymous denial, cross-workspace constraints, validation and rolled-back fixtures. It also verifies the administrative automatic-RLS hook still works after its permissions are restricted.
 
+Failure checks reject a remote endpoint, a wrong database name and a populated database. CI deliberately grants anonymous lead reads and requires the access test to detect that specific bug, then restores the grant and verifies fixture cleanup.
+
 The fixture provides minimal Supabase-compatible roles, `auth.users`, `auth.uid()` and the existing administrative event trigger. It is a test fixture, not a full Supabase Auth service. CI proves PostgreSQL schema and authorization behavior; real sign-in, JWT validation, email and HTTP API integration require separate tests.
 
 The workflow uses a standard Ubuntu runner, with no production credentials, no deployment step, and no artifact/cache uploads. Standard public-repository runners are free: https://docs.github.com/en/billing/concepts/product-billing/github-actions.
